@@ -1,4 +1,4 @@
-﻿namespace Semestre_II_Calculadora
+﻿namespace PresentationLayer
 {
     partial class Form1
     {

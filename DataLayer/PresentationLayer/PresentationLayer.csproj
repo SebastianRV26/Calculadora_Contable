@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7C4A7EAD-ED57-45FC-8A5E-2337F46B92CF}</ProjectGuid>
+    <ProjectGuid>{080E18AC-D4A5-40B4-9E09-E7440590C0D9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Semestre_II_Calculadora</RootNamespace>
-    <AssemblyName>Semestre-II-Calculadora</AssemblyName>
+    <RootNamespace>PresentationLayer</RootNamespace>
+    <AssemblyName>PresentationLayer</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

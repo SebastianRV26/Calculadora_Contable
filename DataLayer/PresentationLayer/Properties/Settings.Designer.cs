@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Semestre_II_Calculadora.Properties
+namespace PresentationLayer.Properties
 {
 
 
