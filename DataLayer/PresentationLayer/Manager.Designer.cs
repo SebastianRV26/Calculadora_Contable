@@ -30,19 +30,19 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.txtboxAdd = new System.Windows.Forms.TextBox();
+            this.lblValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radiobtnColon = new System.Windows.Forms.RadioButton();
+            this.radiobtnDolar = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtboxEdit = new System.Windows.Forms.TextBox();
+            this.lblNewValor = new System.Windows.Forms.Label();
+            this.cmbEdit = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbDelete = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBefore = new System.Windows.Forms.Button();
@@ -56,11 +56,11 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtboxAdd);
+            this.panel1.Controls.Add(this.lblValor);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radiobtnColon);
+            this.panel1.Controls.Add(this.radiobtnDolar);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(178, 179);
@@ -78,23 +78,23 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // textBox1
+            // txtboxAdd
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(52, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 4;
+            this.txtboxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxAdd.Location = new System.Drawing.Point(52, 78);
+            this.txtboxAdd.Name = "txtboxAdd";
+            this.txtboxAdd.Size = new System.Drawing.Size(100, 22);
+            this.txtboxAdd.TabIndex = 4;
             // 
-            // label2
+            // lblValor
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Valor";
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(6, 81);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(40, 16);
+            this.lblValor.TabIndex = 3;
+            this.lblValor.Text = "Valor";
             // 
             // label1
             // 
@@ -106,37 +106,37 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Agregar";
             // 
-            // radioButton2
+            // radiobtnColon
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(3, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(76, 20);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Colones";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radiobtnColon.AutoSize = true;
+            this.radiobtnColon.Checked = true;
+            this.radiobtnColon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtnColon.Location = new System.Drawing.Point(3, 42);
+            this.radiobtnColon.Name = "radiobtnColon";
+            this.radiobtnColon.Size = new System.Drawing.Size(76, 20);
+            this.radiobtnColon.TabIndex = 1;
+            this.radiobtnColon.TabStop = true;
+            this.radiobtnColon.Text = "Colones";
+            this.radiobtnColon.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radiobtnDolar
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(85, 42);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(74, 20);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Dólares";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radiobtnDolar.AutoSize = true;
+            this.radiobtnDolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtnDolar.Location = new System.Drawing.Point(85, 42);
+            this.radiobtnDolar.Name = "radiobtnDolar";
+            this.radiobtnDolar.Size = new System.Drawing.Size(74, 20);
+            this.radiobtnDolar.TabIndex = 0;
+            this.radiobtnDolar.Text = "Dólares";
+            this.radiobtnDolar.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.txtboxEdit);
+            this.panel3.Controls.Add(this.lblNewValor);
+            this.panel3.Controls.Add(this.cmbEdit);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnEdit);
             this.panel3.Location = new System.Drawing.Point(211, 12);
@@ -144,31 +144,31 @@
             this.panel3.Size = new System.Drawing.Size(183, 179);
             this.panel3.TabIndex = 1;
             // 
-            // textBox2
+            // txtboxEdit
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(82, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(96, 22);
-            this.textBox2.TabIndex = 9;
+            this.txtboxEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxEdit.Location = new System.Drawing.Point(82, 78);
+            this.txtboxEdit.Name = "txtboxEdit";
+            this.txtboxEdit.Size = new System.Drawing.Size(96, 22);
+            this.txtboxEdit.TabIndex = 9;
             // 
-            // label4
+            // lblNewValor
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1, 81);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Nuevo valor";
+            this.lblNewValor.AutoSize = true;
+            this.lblNewValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewValor.Location = new System.Drawing.Point(1, 81);
+            this.lblNewValor.Name = "lblNewValor";
+            this.lblNewValor.Size = new System.Drawing.Size(81, 16);
+            this.lblNewValor.TabIndex = 9;
+            this.lblNewValor.Text = "Nuevo valor";
             // 
-            // comboBox1
+            // cmbEdit
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(19, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(135, 21);
-            this.comboBox1.TabIndex = 11;
+            this.cmbEdit.FormattingEnabled = true;
+            this.cmbEdit.Location = new System.Drawing.Point(19, 27);
+            this.cmbEdit.Name = "cmbEdit";
+            this.cmbEdit.Size = new System.Drawing.Size(135, 21);
+            this.cmbEdit.TabIndex = 11;
             // 
             // label3
             // 
@@ -195,7 +195,7 @@
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.comboBox2);
+            this.panel4.Controls.Add(this.cmbDelete);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.btnDelete);
             this.panel4.Location = new System.Drawing.Point(414, 12);
@@ -203,13 +203,13 @@
             this.panel4.Size = new System.Drawing.Size(183, 179);
             this.panel4.TabIndex = 12;
             // 
-            // comboBox2
+            // cmbDelete
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(26, 76);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(135, 21);
-            this.comboBox2.TabIndex = 11;
+            this.cmbDelete.FormattingEnabled = true;
+            this.cmbDelete.Location = new System.Drawing.Point(26, 76);
+            this.cmbDelete.Name = "cmbDelete";
+            this.cmbDelete.Size = new System.Drawing.Size(135, 21);
+            this.cmbDelete.TabIndex = 11;
             // 
             // label6
             // 
@@ -270,19 +270,19 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtboxAdd;
+        private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radiobtnColon;
+        private System.Windows.Forms.RadioButton radiobtnDolar;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbEdit;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label lblNewValor;
+        private System.Windows.Forms.TextBox txtboxEdit;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbDelete;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnBefore;

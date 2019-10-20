@@ -30,11 +30,11 @@
         {
             this.btnManager = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radbtnDollar = new System.Windows.Forms.RadioButton();
+            this.radiobtncolon = new System.Windows.Forms.RadioButton();
+            this.lblMoneyTotal = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnRealiceCierre = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,71 +53,71 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.radbtnDollar);
+            this.panel1.Controls.Add(this.radiobtncolon);
+            this.panel1.Controls.Add(this.lblMoneyTotal);
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.btnRealiceCierre);
             this.panel1.Controls.Add(this.btnManager);
             this.panel1.Location = new System.Drawing.Point(599, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 449);
             this.panel1.TabIndex = 1;
             // 
-            // label2
+            // radbtnDollar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(47, 387);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 31);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "dinero :v";
+            this.radbtnDollar.AutoSize = true;
+            this.radbtnDollar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radbtnDollar.Location = new System.Drawing.Point(100, 101);
+            this.radbtnDollar.Name = "radbtnDollar";
+            this.radbtnDollar.Size = new System.Drawing.Size(47, 35);
+            this.radbtnDollar.TabIndex = 5;
+            this.radbtnDollar.Text = "$";
+            this.radbtnDollar.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // radiobtncolon
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 343);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 31);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Total:";
+            this.radiobtncolon.AutoSize = true;
+            this.radiobtncolon.Checked = true;
+            this.radiobtncolon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtncolon.Location = new System.Drawing.Point(42, 101);
+            this.radiobtncolon.Name = "radiobtncolon";
+            this.radiobtncolon.Size = new System.Drawing.Size(52, 35);
+            this.radiobtncolon.TabIndex = 4;
+            this.radiobtncolon.TabStop = true;
+            this.radiobtncolon.Text = "₡";
+            this.radiobtncolon.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // lblMoneyTotal
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 56);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 39);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Realizar cierre";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblMoneyTotal.AutoSize = true;
+            this.lblMoneyTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoneyTotal.Location = new System.Drawing.Point(47, 387);
+            this.lblMoneyTotal.Name = "lblMoneyTotal";
+            this.lblMoneyTotal.Size = new System.Drawing.Size(118, 31);
+            this.lblMoneyTotal.TabIndex = 3;
+            this.lblMoneyTotal.Text = "dinero :v";
             // 
-            // radioButton1
+            // lblTotal
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(42, 101);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(52, 35);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "₡";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(64, 343);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(83, 31);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "Total:";
             // 
-            // radioButton2
+            // btnRealiceCierre
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(100, 101);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(47, 35);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.Text = "$";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.btnRealiceCierre.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnRealiceCierre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRealiceCierre.Location = new System.Drawing.Point(3, 56);
+            this.btnRealiceCierre.Name = "btnRealiceCierre";
+            this.btnRealiceCierre.Size = new System.Drawing.Size(194, 39);
+            this.btnRealiceCierre.TabIndex = 1;
+            this.btnRealiceCierre.Text = "Realizar cierre";
+            this.btnRealiceCierre.UseVisualStyleBackColor = false;
             // 
             // Main
             // 
@@ -137,10 +137,10 @@
 
         private System.Windows.Forms.Button btnManager;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label lblMoneyTotal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnRealiceCierre;
+        private System.Windows.Forms.RadioButton radbtnDollar;
+        private System.Windows.Forms.RadioButton radiobtncolon;
     }
 }
