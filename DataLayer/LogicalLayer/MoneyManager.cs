@@ -4,8 +4,8 @@ using System.Text;
 
 namespace LogicalLayer
 {
-    class Money
+    public interface MoneyManager
     {
-        private int value;
+        void addMoney(int value);
     }
 }

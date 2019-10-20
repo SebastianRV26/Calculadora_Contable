@@ -1,38 +1,45 @@
 ﻿using System;
-using System.Collections;
 using System.Text;
+using DataLayer;
+using Newtonsoft.Json.Linq;
 
 namespace LogicalLayer
 {
-    class Singleton
+    public class Singleton
     {
-        private static  Singleton instance;
+        private static Singleton instance;
 
-        private ArrayList dollars;
-        private ArrayList colones;
+        private JArray dollars;
+        private JArray colones;
 
-        private Singleton()
+
+        private Singleton(JArray dollars, JArray colones)
         {
-            this.dollars = new ArrayList();
-            this.colones = new ArrayList();
-
-            // datos quemados para pruebas;
-            this.colones.Add(1000);
-            this.colones.Add(2000);
-            this.colones.Add(5000);
-
-            this.dollars.Add(10);
-            this.dollars.Add(20);
-            this.dollars.Add(50);
+            this.dollars = dollars;
+            this.colones = colones;
         }
 
         public static Singleton getInstance()
         {
             if (instance == null)
             {
-                return instance = new Singleton();
+                SingletonManager manager = new SingletonManager("Money.json");
+                return instance = new Singleton(manager.dollars, manager.colones);
             }
             return instance;
         }
+
+        public JArray getDollars()
+        {
+            return this.dollars;
+        }
+
+        public JArray getColones()
+        {
+            return this.colones;
+        }
+
+
+
     }
 }

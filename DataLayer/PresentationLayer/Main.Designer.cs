@@ -124,6 +124,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.moneyContainer);
             this.Controls.Add(this.panel1);
             this.Name = "Main";
             this.Text = "Main";

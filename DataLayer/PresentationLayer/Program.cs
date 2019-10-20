@@ -16,9 +16,7 @@ namespace PresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Main main = new Main();
-            main.Show();
-            Application.Run();
+            Application.Run(new Main());
         }
     }
 }
