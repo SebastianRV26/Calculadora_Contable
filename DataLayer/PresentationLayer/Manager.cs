@@ -16,5 +16,10 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
