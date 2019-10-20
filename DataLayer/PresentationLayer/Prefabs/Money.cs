@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PresentationLayer
+namespace PresentationLayer.Prefabs
 {
-    public partial class Form1 : Form
+    public partial class Money : Form
     {
-        public Form1()
+        public Money()
         {
             InitializeComponent();
         }
