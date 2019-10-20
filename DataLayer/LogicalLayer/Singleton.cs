@@ -29,7 +29,16 @@ namespace LogicalLayer
             return instance;
         }
 
- 
+        public JArray getDollars()
+        {
+            return this.dollars;
+        }
+
+        public JArray getColones()
+        {
+            return this.colones;
+        }
+
 
 
     }

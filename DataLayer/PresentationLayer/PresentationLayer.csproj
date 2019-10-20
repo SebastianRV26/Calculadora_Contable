@@ -64,10 +64,10 @@
     <Compile Include="Manager.Designer.cs">
       <DependentUpon>Manager.cs</DependentUpon>
     </Compile>
-    <Compile Include="Money.cs">
+    <Compile Include="Prefabs\Money.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Money.Designer.cs">
+    <Compile Include="Prefabs\Money.Designer.cs">
       <DependentUpon>Money.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

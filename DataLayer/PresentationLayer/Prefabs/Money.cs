@@ -14,7 +14,7 @@ namespace PresentationLayer.Prefabs
     public partial class Money : UserControl
     {
         private MoneyManager manager;
-        private int Value { get { return Value; } set { Value = value; } }
+        private int Value { get; set; }
 
         public Money(MoneyManager manager,int value)
         {
@@ -29,10 +29,12 @@ namespace PresentationLayer.Prefabs
             InitializeComponent();
         }
 
+
         private void addMoney(object sender, EventArgs e)
         {
             manager.addMoney( (int)inputQuantity.Value * this.Value );
             btnAdd.Enabled = !btnAdd.Enabled;
         }
+
     }
 }
