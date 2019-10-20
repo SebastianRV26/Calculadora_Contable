@@ -16,5 +16,19 @@ namespace PresentationLayer
         {
             InitializeComponent();
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnManager_Click(object sender, EventArgs e)
+        {
+            Manager manager = new Manager();
+            
+            manager.Show();
+            this.Close();
+
+        }
     }
 }
