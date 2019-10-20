@@ -6,5 +6,6 @@ namespace LogicalLayer
 {
     class Money
     {
+        private int value;
     }
 }
