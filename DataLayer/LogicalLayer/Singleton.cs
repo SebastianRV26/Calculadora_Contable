@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Text;
 
 namespace LogicalLayer
@@ -8,20 +8,29 @@ namespace LogicalLayer
     {
         private static  Singleton instance;
 
-        private List<Money> dollars;
-        private List<Money> colones;
+        private ArrayList dollars;
+        private ArrayList colones;
 
         private Singleton()
         {
-            this.dollars = new List<Money>();
-            this.colones = new List<Money>();
+            this.dollars = new ArrayList();
+            this.colones = new ArrayList();
+
+            // datos quemados para pruebas;
+            this.colones.Add(1000);
+            this.colones.Add(2000);
+            this.colones.Add(5000);
+
+            this.dollars.Add(10);
+            this.dollars.Add(20);
+            this.dollars.Add(50);
         }
 
         public static Singleton getInstance()
         {
             if (instance == null)
             {
-                return new Singleton();
+                return instance = new Singleton();
             }
             return instance;
         }
