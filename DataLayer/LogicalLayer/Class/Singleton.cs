@@ -11,43 +11,50 @@ namespace LogicalLayer
     [Serializable]
     public class Singleton
     {
-        private const string FILENAME = "data.dat";
+        private const string CURRENCY = "Currency\\";
         private static Singleton instance;
-        private Hashtable money;
+        private List<Money> money;
+        private Currency target;
 
 
-        private Singleton()
+        private Singleton(Currency target)
         {
-            this.money = new Hashtable();
+            this.target = target;
+            string path = CURRENCY + target + ".dat";
 
-            // Datos Quemados
-            foreach (Currency currency in Enum.GetValues( typeof(Currency)))
+            this.money = (List<Money>) Manager.loadFile(path);
+
+            if(this.money is null)
             {
-                this.money.Add(currency, new List<Money>());
-            }
+                this.money = new List<Money>();
 
+                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
+            }
             
         }
 
-        public static Singleton getInstance()
+        public static Singleton getInstance(Currency currency)
         {
             if (instance == null)
             {
-                instance = (Singleton)Manager.loadFile(FILENAME);
-                return instance == null ? instance = new Singleton() : instance;
+                return instance = new Singleton(currency);
             }
             return instance;
         }
 
-        public Hashtable getMoney()
+        public List<Money> getMoney()
         {
             return this.money;
         }
 
-        public bool saveSingleton()
+        public bool saveMoney()
         {
-            return Manager.saveFile(FILENAME, this);
+            string path = CURRENCY + this.target + ".dat";
+            return Manager.saveFile(path,this.money);
         }
+
+ 
 
 
     }

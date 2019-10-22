@@ -30,8 +30,6 @@
         {
             this.btnManager = new System.Windows.Forms.Button();
             this.s = new System.Windows.Forms.Panel();
-            this.radbtnDollar = new System.Windows.Forms.RadioButton();
-            this.radiobtncolon = new System.Windows.Forms.RadioButton();
             this.lblMoney = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnComplete = new System.Windows.Forms.Button();
@@ -58,8 +56,6 @@
             // 
             this.s.AutoSize = true;
             this.s.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.s.Controls.Add(this.radbtnDollar);
-            this.s.Controls.Add(this.radiobtncolon);
             this.s.Controls.Add(this.lblMoney);
             this.s.Controls.Add(this.lblTotal);
             this.s.Controls.Add(this.btnComplete);
@@ -68,30 +64,6 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(200, 458);
             this.s.TabIndex = 1;
-            // 
-            // radbtnDollar
-            // 
-            this.radbtnDollar.AutoSize = true;
-            this.radbtnDollar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radbtnDollar.Location = new System.Drawing.Point(100, 101);
-            this.radbtnDollar.Name = "radbtnDollar";
-            this.radbtnDollar.Size = new System.Drawing.Size(47, 35);
-            this.radbtnDollar.TabIndex = 5;
-            this.radbtnDollar.Text = "$";
-            this.radbtnDollar.UseVisualStyleBackColor = true;
-            // 
-            // radiobtncolon
-            // 
-            this.radiobtncolon.AutoSize = true;
-            this.radiobtncolon.Checked = true;
-            this.radiobtncolon.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtncolon.Location = new System.Drawing.Point(42, 101);
-            this.radiobtncolon.Name = "radiobtncolon";
-            this.radiobtncolon.Size = new System.Drawing.Size(52, 35);
-            this.radiobtncolon.TabIndex = 4;
-            this.radiobtncolon.TabStop = true;
-            this.radiobtncolon.Text = "₡";
-            this.radiobtncolon.UseVisualStyleBackColor = true;
             // 
             // lblMoney
             // 
@@ -184,8 +156,6 @@
         private System.Windows.Forms.Label lblMoney;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnComplete;
-        private System.Windows.Forms.RadioButton radbtnDollar;
-        private System.Windows.Forms.RadioButton radiobtncolon;
         private System.Windows.Forms.FlowLayoutPanel billContainer;
         private System.Windows.Forms.FlowLayoutPanel coinContainer;
         private System.Windows.Forms.Label label1;

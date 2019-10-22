@@ -22,18 +22,19 @@ namespace PresentationLayer
         public Main()
         {
             InitializeComponent();
-            this.singleton = Singleton.getInstance();
-            this.fillContainer( (List<Money>) this.singleton.getMoney()[Properties.Settings.Default.Currency] );          
+            this.singleton = Singleton.getInstance(Properties.Settings.Default.Currency);
+            this.fillContainer( this.singleton.getMoney());          
         }
 
         public void fillContainer(List<Money> list)
         {
             foreach(Money money in list)
             {
-                if(money.GetTypeCurrency() == TypeCurrency.Bill)
-                    billContainer.Controls.Add(new MoneyControl(this, money.getValue()));
+                MoneyControl temp = new MoneyControl(this, money.getValue());
+                if (money.GetTypeCurrency() == TypeCurrency.Bill)
+                    billContainer.Controls.Add(temp);
                 else
-                    coinContainer.Controls.Add(new MoneyControl(this, money.getValue()));
+                    coinContainer.Controls.Add(temp);
             }
         }
 

@@ -8,18 +8,22 @@ namespace DataLayer
 {
     public class Manager
     {
+        private const string PATH = "..\\..\\..\\Storage\\";
+
         public static object loadFile(string FileName)
         {
             object temp = null;
+            string path = PATH + FileName;
             try {
-                if (File.Exists("..\\..\\..\\Storage\\" + FileName))
+                if (File.Exists(path))
                 {
-                    Stream openFileStream = File.OpenRead("..\\..\\..\\Storage\\" + FileName);
+                    Stream openFileStream = File.OpenRead(path);
                     BinaryFormatter deserializer = new BinaryFormatter();
                     temp = deserializer.Deserialize(openFileStream);
                     openFileStream.Close();
                     return temp;
                 }
+                File.Create(path);
             }
             catch(Exception e)
             {
@@ -33,7 +37,7 @@ namespace DataLayer
         public static bool saveFile(string FileName, object data)
         {
             try {
-                Stream SaveFileStream = File.Create("..\\..\\..\\Storage\\" + FileName);
+                Stream SaveFileStream = File.Create(PATH + FileName);
                 BinaryFormatter serializer = new BinaryFormatter();
                 serializer.Serialize(SaveFileStream, data);
                 SaveFileStream.Close();
