@@ -10,58 +10,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PresentationLayer.Prefabs;
 using Newtonsoft.Json.Linq;
+using LogicalLayer.Enums;
 
 namespace PresentationLayer
 {
     public partial class Main : Form, MoneyManager
     {
         private Singleton singleton;
-        private int total;
-        private bool isDollar;
-
+        private float total;
+        
         public Main()
         {
-            this.singleton = Singleton.getInstance();
             InitializeComponent();
-            fillContainer(this.singleton.getColones());
+
+            this.singleton = Singleton.getInstance();
+            this.fillContainer( (List<Money>)this.singleton.getMoney()[Currency.Colones]);          
         }
 
-        public void fillContainer(JArray array)
+        public void fillContainer(List<Money> list)
         {
-            moneyContainer.Controls.Clear();
-            foreach (int cash in array)
+            foreach(Money money in list)
             {
-                moneyContainer.Controls.Add(new Money(this, cash));
+                if(money.GetTypeCurrency() == TypeCurrency.Bill)
+                    billContainer.Controls.Add(new MoneyControl(this, money.getValue()));
+                else
+                    coinContainer.Controls.Add(new MoneyControl(this, money.getValue()));
             }
         }
 
-        public void addMoney(int value)
+        public void addMoney(float value)
         {
             this.total += value;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void BtnManager_Click(object sender, EventArgs e)
+        private void openManager(object sender, EventArgs e)
         {
             Manager manager = new Manager();
-            
+
             manager.Show();
             this.Close();
-
-        }
-
-        private void complete(object sender, EventArgs e)
-        {
-            lblMoney.Text = this.total.ToString();
-
-            if (this.isDollar)
-                this.fillContainer(this.singleton.getDollars());
-            else
-                this.fillContainer(this.singleton.getColones());
         }
     }
 }

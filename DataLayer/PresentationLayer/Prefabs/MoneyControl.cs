@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace PresentationLayer.Prefabs
 {
-    public partial class Money : UserControl
+    public partial class MoneyControl : UserControl
     {
         private MoneyManager manager;
-        private int Value { get; set; }
+        private float Value { get; set; }
 
-        public Money(MoneyManager manager,int value)
+        public MoneyControl(MoneyManager manager,float value)
         {
             this.manager = manager;
             this.Value = value;
@@ -24,7 +24,7 @@ namespace PresentationLayer.Prefabs
             lblValue.Text = value.ToString();
         }
 
-        public Money()
+        public MoneyControl()
         {
             InitializeComponent();
         }

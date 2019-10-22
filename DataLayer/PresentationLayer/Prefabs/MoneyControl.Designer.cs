@@ -1,6 +1,6 @@
 ﻿namespace PresentationLayer.Prefabs
 {
-    partial class Money
+    partial class MoneyControl
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -38,7 +38,7 @@
             // 
             this.lblValue.AutoSize = true;
             this.lblValue.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValue.Location = new System.Drawing.Point(37, 33);
+            this.lblValue.Location = new System.Drawing.Point(37, 54);
             this.lblValue.Name = "lblValue";
             this.lblValue.Size = new System.Drawing.Size(93, 39);
             this.lblValue.TabIndex = 0;
@@ -51,9 +51,9 @@
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(15, 141);
+            this.btnAdd.Location = new System.Drawing.Point(36, 152);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(140, 36);
+            this.btnAdd.Size = new System.Drawing.Size(94, 34);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -62,12 +62,12 @@
             // inputQuantity
             // 
             this.inputQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputQuantity.Location = new System.Drawing.Point(15, 108);
+            this.inputQuantity.Location = new System.Drawing.Point(37, 119);
             this.inputQuantity.Name = "inputQuantity";
-            this.inputQuantity.Size = new System.Drawing.Size(140, 27);
+            this.inputQuantity.Size = new System.Drawing.Size(93, 27);
             this.inputQuantity.TabIndex = 2;
             // 
-            // Money
+            // MoneyControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -75,7 +75,7 @@
             this.Controls.Add(this.inputQuantity);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.lblValue);
-            this.Name = "Money";
+            this.Name = "MoneyControl";
             this.Size = new System.Drawing.Size(171, 189);
             ((System.ComponentModel.ISupportInitialize)(this.inputQuantity)).EndInit();
             this.ResumeLayout(false);

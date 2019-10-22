@@ -6,6 +6,6 @@ namespace LogicalLayer
 {
     public interface MoneyManager
     {
-        void addMoney(int value);
+        void addMoney(float value);
     }
 }
