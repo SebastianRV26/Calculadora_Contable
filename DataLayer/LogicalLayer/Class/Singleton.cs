@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Text;
 using DataLayer;
-using Newtonsoft.Json.Linq;
 using LogicalLayer.Enums;
 using System.Collections.Generic;
 using System.Collections;
+
 
 namespace LogicalLayer
 {
     [Serializable]
     public class Singleton
     {
+        private const string FILENAME = "data.dat";
         private static Singleton instance;
         private Hashtable money;
 
@@ -26,34 +27,14 @@ namespace LogicalLayer
             }
 
             
-            for(byte i = 0; i < 5; i++)
-            {
-                ((List<Money>)money[Currency.Colones]).Add(new Money(i, TypeCurrency.Coin, Currency.Colones));
-            }
-
-            for (byte i = 0; i < 5; i++)
-            {
-                ((List<Money>)money[Currency.Colones]).Add(new Money(i, TypeCurrency.Coin, Currency.Dolllar));
-            }
-
-            for (byte i = 0; i < 5; i++)
-            {
-                ((List<Money>)money[Currency.Colones]).Add(new Money(1000+i, TypeCurrency.Bill, Currency.Colones));
-            }
-
-            for (byte i = 0; i < 5; i++)
-            {
-                ((List<Money>)money[Currency.Colones]).Add(new Money(10 + i, TypeCurrency.Bill, Currency.Dolllar));
-            }
-
-            // Datos Quemado, se van a borrar;
         }
 
         public static Singleton getInstance()
         {
             if (instance == null)
             {
-                return instance = new Singleton();
+                instance = (Singleton)Manager.loadFile(FILENAME);
+                return instance == null ? instance = new Singleton() : instance;
             }
             return instance;
         }
@@ -62,6 +43,12 @@ namespace LogicalLayer
         {
             return this.money;
         }
+
+        public bool saveSingleton()
+        {
+            return Manager.saveFile(FILENAME, this);
+        }
+
 
     }
 }

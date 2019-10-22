@@ -22,9 +22,8 @@ namespace PresentationLayer
         public Main()
         {
             InitializeComponent();
-
             this.singleton = Singleton.getInstance();
-            this.fillContainer( (List<Money>)this.singleton.getMoney()[Currency.Colones]);          
+            this.fillContainer( (List<Money>) this.singleton.getMoney()[Properties.Settings.Default.Currency] );          
         }
 
         public void fillContainer(List<Money> list)
@@ -46,6 +45,7 @@ namespace PresentationLayer
 
         private void openManager(object sender, EventArgs e)
         {
+            
             Manager manager = new Manager();
 
             manager.Show();

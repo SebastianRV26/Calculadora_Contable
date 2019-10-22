@@ -57,7 +57,7 @@
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.addMoney);
+            this.btnAdd.Click += new System.EventHandler(this.add);
             // 
             // inputQuantity
             // 

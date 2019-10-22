@@ -1,28 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 namespace DataLayer
 {
-    class Manager
+    public class Manager
     {
-        public static string loadFile(string filename)
+        public static object loadFile(string FileName)
         {
-            try { 
-                return System.IO.File.ReadAllText("..\\..\\..\\Storage\\" + filename);
-            }catch(Exception e)
-            {
-                return "";
+            object temp = null;
+            try {
+                if (File.Exists("..\\..\\..\\Storage\\" + FileName))
+                {
+                    Stream openFileStream = File.OpenRead("..\\..\\..\\Storage\\" + FileName);
+                    BinaryFormatter deserializer = new BinaryFormatter();
+                    temp = deserializer.Deserialize(openFileStream);
+                    openFileStream.Close();
+                    return temp;
+                }
             }
+            catch(Exception e)
+            {
+                Console.WriteLine("Load file error!");
+                return temp;
+            }
+            return temp;
+
         }
 
-        public static bool saveFile(string filename,string data)
+        public static bool saveFile(string FileName, object data)
         {
-            try { 
-                StreamWriter sw = new StreamWriter("..\\..\\..\\Storage\\" + filename, false, Encoding.ASCII);
-                sw.Write(data);
-                sw.Close();
+            try {
+                Stream SaveFileStream = File.Create("..\\..\\..\\Storage\\" + FileName);
+                BinaryFormatter serializer = new BinaryFormatter();
+                serializer.Serialize(SaveFileStream, data);
+                SaveFileStream.Close();
                 return true;
             }
             catch (Exception e) {

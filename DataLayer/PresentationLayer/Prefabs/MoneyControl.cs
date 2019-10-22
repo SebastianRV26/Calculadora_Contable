@@ -30,11 +30,10 @@ namespace PresentationLayer.Prefabs
         }
 
 
-        private void addMoney(object sender, EventArgs e)
+        private void add(object sender, EventArgs e)
         {
-            manager.addMoney( (int)inputQuantity.Value * this.Value );
-            btnAdd.Enabled = !btnAdd.Enabled;
+            manager.addMoney((int)inputQuantity.Value * this.Value);
+            inputQuantity.Value = 0;
         }
-
     }
 }
