@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PresentationLayer
 {
     public partial class Manager : Form
@@ -19,6 +20,12 @@ namespace PresentationLayer
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
+            int numero = Convert.ToInt32(sender.ToString());
+            if (radiobtnColon.Checked == true) //it's colones
+            {
+                
+                return;
+            }
 
         }
 
