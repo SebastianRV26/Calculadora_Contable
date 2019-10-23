@@ -7,23 +7,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LogicalLayer;
+using PresentationLayer.Prefabs;
+using LogicalLayer.Enums;
 
 namespace PresentationLayer
 {
-    public partial class Manager : Form
+    public partial class Manager: Form, MoneyManager
     {
+        private Singleton singleton;
+
+
         public Manager()
         {
             InitializeComponent();
-        }
+            this.singleton = Singleton.getInstance(Properties.Settings.Default.Currency);
 
+        }
+        
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            int numero = Convert.ToInt32(sender.ToString());
+            
+            if ((txtboxAdd.Text.Trim() == "")) //if is empty
+            {
+                MessageBox.Show("No se ha insertado ningún dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            int numero = Convert.ToInt32(txtboxAdd.ToString());
             if (radiobtnColon.Checked == true) //it's colones
             {
-                
+                //num, typeCurrency, currency
+                Money mon = new Money()
+                List<Money> money = singleton.GetType();
+                money.Add(mon);
                 return;
             }
 
@@ -59,6 +75,37 @@ namespace PresentationLayer
             Main main = new Main();
             main.Show();
             this.Close();
+        }
+
+        private void RadiobtnBillete_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtboxAdd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            { //only numbers
+                e.Handled = true;
+            }
+        }
+
+        private void TxtboxEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            { //only numbers
+                e.Handled = true;
+            }
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void addMoney(float value)
+        {
+            throw new NotImplementedException();
         }
     }
 }

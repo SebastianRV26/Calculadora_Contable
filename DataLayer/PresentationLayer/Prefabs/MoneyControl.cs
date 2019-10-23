@@ -24,7 +24,7 @@ namespace PresentationLayer.Prefabs
             lblValue.Text = value.ToString();
         }
 
-        public MoneyControl()
+        public MoneyControl(Manager manager, float v)
         {
             InitializeComponent();
         }

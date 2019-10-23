@@ -3,7 +3,7 @@ namespace LogicalLayer.Enums
 {
     public enum Currency
     {
-        Dolllar,
+        Dollar,
         Colones
     };
 }
