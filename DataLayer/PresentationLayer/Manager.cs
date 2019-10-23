@@ -18,11 +18,10 @@ namespace PresentationLayer
         private Singleton singleton;
 
 
-        public Manager()
+        public Manager(Singleton singleton)
         {
             InitializeComponent();
-            this.singleton = Singleton.getInstance(Properties.Settings.Default.Currency);
-
+            this.singleton = singleton;
         }
         
         private void BtnAdd_Click(object sender, EventArgs e)
@@ -34,12 +33,11 @@ namespace PresentationLayer
                 return;
             }
             int numero = Convert.ToInt32(txtboxAdd.ToString());
-            if (radiobtnColon.Checked == true) //it's colones
+            if (radiobtnBillete.Checked == true) //it's bill
             {
                 //num, typeCurrency, currency
-                Money mon = new Money()
-                List<Money> money = singleton.GetType();
-                money.Add(mon);
+                Money mon = new Money(numero, TypeCurrency.Bill, singleton.getCurrency());
+                this.singleton.getMoney().Add(mon);
                 return;
             }
 

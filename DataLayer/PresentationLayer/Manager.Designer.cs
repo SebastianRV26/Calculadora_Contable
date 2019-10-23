@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.radiobtnBillete = new System.Windows.Forms.RadioButton();
             this.radiobtnMoneda = new System.Windows.Forms.RadioButton();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtboxAdd = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radiobtnColon = new System.Windows.Forms.RadioButton();
-            this.radiobtnDolar = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtboxEdit = new System.Windows.Forms.TextBox();
             this.lblNewValor = new System.Windows.Forms.Label();
@@ -50,7 +47,6 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnBefore = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -59,33 +55,23 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.radiobtnMoneda);
+            this.panel1.Controls.Add(this.radiobtnBillete);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.txtboxAdd);
             this.panel1.Controls.Add(this.lblValor);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.radiobtnColon);
-            this.panel1.Controls.Add(this.radiobtnDolar);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(178, 179);
             this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.radiobtnBillete);
-            this.panel2.Controls.Add(this.radiobtnMoneda);
-            this.panel2.Location = new System.Drawing.Point(-1, 49);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(170, 29);
-            this.panel2.TabIndex = 13;
             // 
             // radiobtnBillete
             // 
             this.radiobtnBillete.AutoSize = true;
             this.radiobtnBillete.Checked = true;
             this.radiobtnBillete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnBillete.Location = new System.Drawing.Point(4, 4);
+            this.radiobtnBillete.Location = new System.Drawing.Point(3, 40);
             this.radiobtnBillete.Name = "radiobtnBillete";
             this.radiobtnBillete.Size = new System.Drawing.Size(63, 20);
             this.radiobtnBillete.TabIndex = 15;
@@ -97,7 +83,7 @@
             // 
             this.radiobtnMoneda.AutoSize = true;
             this.radiobtnMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnMoneda.Location = new System.Drawing.Point(86, 4);
+            this.radiobtnMoneda.Location = new System.Drawing.Point(76, 40);
             this.radiobtnMoneda.Name = "radiobtnMoneda";
             this.radiobtnMoneda.Size = new System.Drawing.Size(76, 20);
             this.radiobtnMoneda.TabIndex = 14;
@@ -144,30 +130,6 @@
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Agregar";
-            // 
-            // radiobtnColon
-            // 
-            this.radiobtnColon.AutoSize = true;
-            this.radiobtnColon.Checked = true;
-            this.radiobtnColon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnColon.Location = new System.Drawing.Point(3, 28);
-            this.radiobtnColon.Name = "radiobtnColon";
-            this.radiobtnColon.Size = new System.Drawing.Size(76, 20);
-            this.radiobtnColon.TabIndex = 1;
-            this.radiobtnColon.TabStop = true;
-            this.radiobtnColon.Text = "Colones";
-            this.radiobtnColon.UseVisualStyleBackColor = true;
-            // 
-            // radiobtnDolar
-            // 
-            this.radiobtnDolar.AutoSize = true;
-            this.radiobtnDolar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnDolar.Location = new System.Drawing.Point(85, 28);
-            this.radiobtnDolar.Name = "radiobtnDolar";
-            this.radiobtnDolar.Size = new System.Drawing.Size(74, 20);
-            this.radiobtnDolar.TabIndex = 0;
-            this.radiobtnDolar.Text = "Dólares";
-            this.radiobtnDolar.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -299,8 +261,6 @@
             this.Load += new System.EventHandler(this.Manager_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -316,8 +276,6 @@
         private System.Windows.Forms.TextBox txtboxAdd;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton radiobtnColon;
-        private System.Windows.Forms.RadioButton radiobtnDolar;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cmbEdit;
         private System.Windows.Forms.Label label3;
@@ -329,7 +287,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnBefore;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.RadioButton radiobtnMoneda;
         private System.Windows.Forms.RadioButton radiobtnBillete;
     }

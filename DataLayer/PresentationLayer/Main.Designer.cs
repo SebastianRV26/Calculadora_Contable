@@ -36,11 +36,11 @@
             this.lblMoney = new System.Windows.Forms.Label();
             this.btnComplete = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.billContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.coinContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.coinContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.s.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -149,6 +149,16 @@
             this.panel2.Size = new System.Drawing.Size(625, 35);
             this.panel2.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "BIlletes";
+            // 
             // billContainer
             // 
             this.billContainer.AutoScroll = true;
@@ -172,6 +182,16 @@
             this.panel3.Size = new System.Drawing.Size(625, 35);
             this.panel3.TabIndex = 4;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 19);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Monedas";
+            // 
             // coinContainer
             // 
             this.coinContainer.AutoScroll = true;
@@ -183,26 +203,6 @@
             this.coinContainer.Name = "coinContainer";
             this.coinContainer.Size = new System.Drawing.Size(625, 30);
             this.coinContainer.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "BIlletes";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Monedas";
             // 
             // Main
             // 
