@@ -14,12 +14,12 @@ namespace LogicalLayer
         private const string CURRENCY = "Currency\\";
         private static Singleton instance;
         private List<Money> money;
-        private Currency target;
+        private Currency currency;
 
 
         private Singleton(Currency target)
         {
-            this.target = target;
+            this.currency = target;
             string path = CURRENCY + target + ".dat";
 
             this.money = (List<Money>) Manager.loadFile(path);
@@ -61,6 +61,7 @@ namespace LogicalLayer
             return instance;
         }
 
+
         public List<Money> getMoney()
         {
             return this.money;
@@ -68,8 +69,13 @@ namespace LogicalLayer
 
         public bool saveMoney()
         {
-            string path = CURRENCY + this.target + ".dat";
+            string path = CURRENCY + this.currency.ToString() + ".dat";
             return Manager.saveFile(path,this.money);
+        }
+
+        public Currency getCurrency()
+        {
+            return this.currency;
         }
 
  

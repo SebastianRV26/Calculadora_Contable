@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radiobtnBillete = new System.Windows.Forms.RadioButton();
             this.radiobtnMoneda = new System.Windows.Forms.RadioButton();
+            this.radiobtnBillete = new System.Windows.Forms.RadioButton();
             this.btnAdd = new System.Windows.Forms.Button();
             this.txtboxAdd = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
@@ -61,42 +61,43 @@
             this.panel1.Controls.Add(this.txtboxAdd);
             this.panel1.Controls.Add(this.lblValor);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 179);
+            this.panel1.Size = new System.Drawing.Size(800, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // radiobtnMoneda
+            // 
+            this.radiobtnMoneda.AutoSize = true;
+            this.radiobtnMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtnMoneda.Location = new System.Drawing.Point(174, 10);
+            this.radiobtnMoneda.Name = "radiobtnMoneda";
+            this.radiobtnMoneda.Size = new System.Drawing.Size(85, 24);
+            this.radiobtnMoneda.TabIndex = 14;
+            this.radiobtnMoneda.Text = "Moneda";
+            this.radiobtnMoneda.UseVisualStyleBackColor = true;
             // 
             // radiobtnBillete
             // 
             this.radiobtnBillete.AutoSize = true;
             this.radiobtnBillete.Checked = true;
-            this.radiobtnBillete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnBillete.Location = new System.Drawing.Point(3, 40);
+            this.radiobtnBillete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radiobtnBillete.Location = new System.Drawing.Point(98, 11);
             this.radiobtnBillete.Name = "radiobtnBillete";
-            this.radiobtnBillete.Size = new System.Drawing.Size(63, 20);
+            this.radiobtnBillete.Size = new System.Drawing.Size(70, 24);
             this.radiobtnBillete.TabIndex = 15;
             this.radiobtnBillete.TabStop = true;
             this.radiobtnBillete.Text = "Billete";
             this.radiobtnBillete.UseVisualStyleBackColor = true;
             // 
-            // radiobtnMoneda
-            // 
-            this.radiobtnMoneda.AutoSize = true;
-            this.radiobtnMoneda.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radiobtnMoneda.Location = new System.Drawing.Point(76, 40);
-            this.radiobtnMoneda.Name = "radiobtnMoneda";
-            this.radiobtnMoneda.Size = new System.Drawing.Size(76, 20);
-            this.radiobtnMoneda.TabIndex = 14;
-            this.radiobtnMoneda.Text = "Moneda";
-            this.radiobtnMoneda.UseVisualStyleBackColor = true;
-            // 
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(-1, 145);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(617, -1);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(174, 29);
+            this.btnAdd.Size = new System.Drawing.Size(182, 45);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -104,30 +105,30 @@
             // 
             // txtboxAdd
             // 
-            this.txtboxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxAdd.Location = new System.Drawing.Point(52, 78);
+            this.txtboxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxAdd.Location = new System.Drawing.Point(348, 9);
             this.txtboxAdd.Name = "txtboxAdd";
-            this.txtboxAdd.Size = new System.Drawing.Size(100, 22);
+            this.txtboxAdd.Size = new System.Drawing.Size(160, 26);
             this.txtboxAdd.TabIndex = 4;
             this.txtboxAdd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtboxAdd_KeyPress);
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(6, 81);
+            this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(296, 12);
             this.lblValor.Name = "lblValor";
-            this.lblValor.Size = new System.Drawing.Size(40, 16);
+            this.lblValor.Size = new System.Drawing.Size(46, 20);
             this.lblValor.TabIndex = 3;
             this.lblValor.Text = "Valor";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 7);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(11, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.Size = new System.Drawing.Size(73, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Agregar";
             // 
@@ -140,7 +141,7 @@
             this.panel3.Controls.Add(this.cmbEdit);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnEdit);
-            this.panel3.Location = new System.Drawing.Point(211, 12);
+            this.panel3.Location = new System.Drawing.Point(16, 92);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(183, 179);
             this.panel3.TabIndex = 1;
@@ -201,7 +202,7 @@
             this.panel4.Controls.Add(this.cmbDelete);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.btnDelete);
-            this.panel4.Location = new System.Drawing.Point(414, 12);
+            this.panel4.Location = new System.Drawing.Point(229, 92);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(183, 179);
             this.panel4.TabIndex = 12;
@@ -234,6 +235,7 @@
             this.btnDelete.TabIndex = 9;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnBefore
             // 
