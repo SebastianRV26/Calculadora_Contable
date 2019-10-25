@@ -29,25 +29,25 @@ namespace LogicalLayer
                 this.money = new List<Money>();
 
                 this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(5, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(10, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(20, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(25, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(50, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(100, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(200, TypeCurrency.Coin, Currency.Colones));
+                this.money.Add(new Money(500, TypeCurrency.Coin, Currency.Colones));              
                 this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
 
                 this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(2000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(3000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(5000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(10000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(15000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(20000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(50000, TypeCurrency.Bill, Currency.Colones));
+                this.money.Add(new Money(100000, TypeCurrency.Bill, Currency.Colones));
             }
             
         }
