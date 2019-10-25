@@ -1,11 +1,13 @@
-﻿using System;
+﻿using LogicalLayer.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace LogicalLayer
+namespace LogicalLayer.Interfaces
 {
     public interface MoneyManager
     {
-        void addMoney(float value);
+        Boolean editMoney(int number, int newValue, TypeCurrency typeCurrency);
+        Boolean deleteMoney(int value, TypeCurrency typeCurrency);
     }
 }

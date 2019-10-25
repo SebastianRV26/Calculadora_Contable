@@ -47,7 +47,7 @@ namespace PresentationLayer
         private void openManager(object sender, EventArgs e)
         {
             
-            Manager manager = new Manager();
+            Manager manager = new Manager(this.singleton);
 
             manager.Show();
             this.Close();

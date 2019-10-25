@@ -38,5 +38,10 @@ namespace LogicalLayer
         {
             return this.Value;
         }
+
+        public void setValue(int newValue)
+        {
+            this.Value = newValue;
+        }
     }
 }
