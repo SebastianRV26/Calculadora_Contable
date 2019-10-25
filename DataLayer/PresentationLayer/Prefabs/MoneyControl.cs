@@ -13,10 +13,10 @@ namespace PresentationLayer.Prefabs
 {
     public partial class MoneyControl : UserControl
     {
-        private MoneyManager manager;
+        private TotalValue manager;
         private float Value { get; set; }
 
-        public MoneyControl(MoneyManager manager,float value)
+        public MoneyControl(TotalValue manager,float value)
         {
             this.manager = manager;
             this.Value = value;

@@ -14,7 +14,7 @@ using LogicalLayer.Enums;
 
 namespace PresentationLayer
 {
-    public partial class Main : Form, MoneyManager
+    public partial class Main : Form, TotalValue
     {
         private Singleton singleton;
         private float total;

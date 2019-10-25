@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LogicalLayer
 {
-    public interface MoneyInterface
+    public interface TotalValue
     {
         void addMoney(float value);
     }
