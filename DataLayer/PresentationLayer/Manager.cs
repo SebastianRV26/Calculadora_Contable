@@ -14,51 +14,32 @@ using LogicalLayer.Interfaces;
 
 namespace PresentationLayer
 {
-    public partial class Manager: Form, MoneyManager
+    public partial class Manager: Form, MoneyManager, ContainerUpdater
     {
         private Singleton singleton;
+  
 
 
-        public Manager()
+        public Manager(Singleton singleton)
         {
+   
             InitializeComponent();
-            this.singleton = Singleton.getInstance();
+            this.singleton = singleton;
+            this.fillContainer(this.singleton.getMoney());
         }
 
         
 
-        public bool editMoney(int number, int newValue, TypeCurrency typeCurrency)
+        public void editCurrency(Money money)
         {
-            foreach (Money m in this.singleton.getMoney())
-            {
-                if ((m.Value == number) && (m.Value.Equals(typeCurrency)))
-                {
-                    m.Value = newValue;
-                    return true;
-                }
-            }
-            return false;
+            int index = this.singleton.getMoney().IndexOf(money);
+            this.singleton.getMoney().Insert(index, money);
+
         }
 
-        public bool deleteMoney(int number, TypeCurrency typeCurrency)
+        public void deleteCurrency(Money money)
         {
-            foreach (Money m in this.singleton.getMoney()) 
-            { 
-                if ((m.Value == number) && (m.Value.Equals(typeCurrency)))
-                {
-                    (this.singleton.getMoney()).Remove(m);
-                    return true;
-                }
-            }
-            return false;
-        }
-
-
-        private void back(object sender, EventArgs e)
-        {
-            Main main = new Main();
-            main.Show();
-            this.Dispose();
+            this.singleton.getMoney().Remove(money);
         }
 
         private void addMoney(object sender, EventArgs e)
@@ -82,12 +63,34 @@ namespace PresentationLayer
                     }
                 }
 
-                this.singleton.getMoney().Add( new Money(value, typeCurrency, singleton.getCurrency() ) );
+                Money temp = new Money(value, typeCurrency, singleton.getCurrency());
+                this.singleton.getMoney().Add(temp);
+                this.singleton.saveMoney();
+                this.moneyContainer.Controls.Add(new MoneyControl(this, temp));
                 MessageBox.Show("Moneda agregada correctamente!", "Mensaje informativo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             MessageBox.Show("Valor en cero", "Valor nulo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void SaveData(object sender, FormClosingEventArgs e)
+        {
+            this.singleton.saveMoney();
+        }
+
+        public void containerUpdate()
+        {
+            this.moneyContainer.Controls.Clear();
+            this.fillContainer(this.singleton.getMoney());
+        }
+
+        public void fillContainer(List<Money> list)
+        {
+           
+            foreach (Money money in list)
+            {
+                moneyContainer.Controls.Add(new MoneyControl(this, money));
+            }
+        }
     }
 }

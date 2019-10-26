@@ -87,6 +87,7 @@
             this.Controls.Add(this.comboCurrency);
             this.Name = "Preload";
             this.Text = "Preload";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.close);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -29,9 +29,17 @@ namespace PresentationLayer
         {
             Properties.Settings.Default.Currency = (Currency)comboCurrency.SelectedItem;
             Properties.Settings.Default.Remember = checkRemember.Checked;
-            new Main().Show();
+            Main form = new Main();
+            form.Show();
             this.Dispose();
+            
         }
 
+        private void close(object sender, FormClosedEventArgs e)
+        {
+            Properties.Settings.Default.Save();
+        
+            Application.Exit();
+        }
     }
 }

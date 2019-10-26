@@ -29,27 +29,25 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtboxAdd = new System.Windows.Forms.NumericUpDown();
             this.radiobtnMoneda = new System.Windows.Forms.RadioButton();
             this.radiobtnBillete = new System.Windows.Forms.RadioButton();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtboxAdd = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnBefore = new System.Windows.Forms.Button();
             this.moneyContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtboxAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(132)))), ((int)(((byte)(206)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtboxAdd);
             this.panel1.Controls.Add(this.radiobtnMoneda);
             this.panel1.Controls.Add(this.radiobtnBillete);
             this.panel1.Controls.Add(this.btnAdd);
-            this.panel1.Controls.Add(this.txtboxAdd);
             this.panel1.Controls.Add(this.lblValor);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,6 +55,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // txtboxAdd
+            // 
+            this.txtboxAdd.DecimalPlaces = 2;
+            this.txtboxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxAdd.Location = new System.Drawing.Point(348, 10);
+            this.txtboxAdd.Maximum = new decimal(new int[] {
+            100000000,
+            0,
+            0,
+            0});
+            this.txtboxAdd.Name = "txtboxAdd";
+            this.txtboxAdd.Size = new System.Drawing.Size(120, 24);
+            this.txtboxAdd.TabIndex = 16;
             // 
             // radiobtnMoneda
             // 
@@ -94,14 +106,6 @@
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.addMoney);
             // 
-            // txtboxAdd
-            // 
-            this.txtboxAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxAdd.Location = new System.Drawing.Point(348, 9);
-            this.txtboxAdd.Name = "txtboxAdd";
-            this.txtboxAdd.Size = new System.Drawing.Size(160, 26);
-            this.txtboxAdd.TabIndex = 4;
-            // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
@@ -122,18 +126,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Agregar";
             // 
-            // btnBefore
-            // 
-            this.btnBefore.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBefore.Location = new System.Drawing.Point(729, 4);
-            this.btnBefore.Name = "btnBefore";
-            this.btnBefore.Size = new System.Drawing.Size(67, 29);
-            this.btnBefore.TabIndex = 12;
-            this.btnBefore.Text = "Atrás";
-            this.btnBefore.UseVisualStyleBackColor = false;
-            this.btnBefore.Click += new System.EventHandler(this.back);
-            // 
             // moneyContainer
             // 
             this.moneyContainer.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -142,29 +134,19 @@
             this.moneyContainer.Size = new System.Drawing.Size(800, 405);
             this.moneyContainer.TabIndex = 13;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(132)))), ((int)(((byte)(206)))));
-            this.panel2.Controls.Add(this.btnBefore);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 414);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 36);
-            this.panel2.TabIndex = 14;
-            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.moneyContainer);
             this.Controls.Add(this.panel1);
             this.Name = "Manager";
             this.Text = "Manager";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SaveData);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtboxAdd)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,13 +155,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtboxAdd;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnBefore;
         private System.Windows.Forms.RadioButton radiobtnMoneda;
         private System.Windows.Forms.RadioButton radiobtnBillete;
         private System.Windows.Forms.FlowLayoutPanel moneyContainer;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.NumericUpDown txtboxAdd;
     }
 }

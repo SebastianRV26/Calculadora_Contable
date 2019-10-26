@@ -1,38 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LogicalLayer;
+using LogicalLayer.Interfaces;
 using System.Windows.Forms;
+using LogicalLayer;
 
 namespace PresentationLayer.Prefabs
 {
     public partial class MoneyControl : UserControl
     {
         private TotalValue manager;
-        private float Value { get; set; }
+        private MoneyManager editor;
+        private Money money;
+        private bool editing;
 
-        public MoneyControl(TotalValue manager,float value)
+        public MoneyControl(TotalValue manager, Money money)
         {
+            this.editing = false;
             this.manager = manager;
-            this.Value = value;
             InitializeComponent();
-            lblValue.Text = value.ToString();
+            lblValue.Text = money.Value.ToString();
         }
 
-        public MoneyControl(Manager manager, float v)
+        public MoneyControl(MoneyManager editor, Money money)
         {
+            this.editing = true;
+            this.editor = editor;
             InitializeComponent();
+
+            this.lblEditing.Visible = true;
+            lblValue.Visible = false;
+            btnDelete.Visible = true;
+            this.inputQuantity.DecimalPlaces = 2;
+            inputQuantity.Value = (decimal) money.Value;
+            this.btnAction.Text = "Guardar";
         }
 
-
-        private void add(object sender, EventArgs e)
+        private void removeCurrency(object sender, EventArgs e)
         {
-            manager.addMoney((int)inputQuantity.Value * this.Value);
+            this.editor.deleteCurrency(this.money);
+            this.Dispose();
+        }
+
+        private void action(object sender, EventArgs e)
+        {
+            if (editing)
+            {
+                this.editor.editCurrency(this.money);
+
+                return;
+            }
+            manager.addMoney((int)inputQuantity.Value * this.money.Value);
             inputQuantity.Value = 0;
         }
     }
