@@ -30,6 +30,7 @@
         {
             this.btnManager = new System.Windows.Forms.Button();
             this.s = new System.Windows.Forms.Panel();
+            this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -49,17 +50,17 @@
             // 
             // btnManager
             // 
-            this.btnManager.BackColor = System.Drawing.Color.Transparent;
+            this.btnManager.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnManager.FlatAppearance.BorderSize = 0;
             this.btnManager.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManager.ForeColor = System.Drawing.Color.Black;
-            this.btnManager.Location = new System.Drawing.Point(-3, 61);
+            this.btnManager.Location = new System.Drawing.Point(0, 68);
             this.btnManager.Margin = new System.Windows.Forms.Padding(0);
             this.btnManager.Name = "btnManager";
-            this.btnManager.Size = new System.Drawing.Size(200, 39);
+            this.btnManager.Size = new System.Drawing.Size(197, 39);
             this.btnManager.TabIndex = 0;
-            this.btnManager.Text = "Gestonar de Dinero";
+            this.btnManager.Text = "Gestonar  Dinero";
             this.btnManager.UseVisualStyleBackColor = false;
             this.btnManager.Click += new System.EventHandler(this.openManager);
             // 
@@ -67,6 +68,7 @@
             // 
             this.s.AutoSize = true;
             this.s.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(132)))), ((int)(((byte)(206)))));
+            this.s.Controls.Add(this.btnBack);
             this.s.Controls.Add(this.label1);
             this.s.Controls.Add(this.panel1);
             this.s.Controls.Add(this.btnComplete);
@@ -77,6 +79,22 @@
             this.s.Name = "s";
             this.s.Size = new System.Drawing.Size(197, 480);
             this.s.TabIndex = 1;
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.Black;
+            this.btnBack.Location = new System.Drawing.Point(0, 330);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(0);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(197, 39);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "Salir";
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.back);
             // 
             // label1
             // 
@@ -126,18 +144,19 @@
             // 
             // btnComplete
             // 
-            this.btnComplete.BackColor = System.Drawing.Color.Transparent;
+            this.btnComplete.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnComplete.FlatAppearance.BorderSize = 0;
             this.btnComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnComplete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnComplete.ForeColor = System.Drawing.Color.Black;
-            this.btnComplete.Location = new System.Drawing.Point(-3, 103);
+            this.btnComplete.Location = new System.Drawing.Point(0, 110);
             this.btnComplete.Margin = new System.Windows.Forms.Padding(0);
             this.btnComplete.Name = "btnComplete";
-            this.btnComplete.Size = new System.Drawing.Size(200, 39);
+            this.btnComplete.Size = new System.Drawing.Size(197, 39);
             this.btnComplete.TabIndex = 1;
-            this.btnComplete.Text = "Realizar cierre";
+            this.btnComplete.Text = "Terminar cierre";
             this.btnComplete.UseVisualStyleBackColor = false;
+            this.btnComplete.Click += new System.EventHandler(this.finish);
             // 
             // panel2
             // 
@@ -218,6 +237,7 @@
             this.MinimumSize = new System.Drawing.Size(600, 500);
             this.Name = "Main";
             this.Text = "Main";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.close);
             this.s.ResumeLayout(false);
             this.s.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -246,5 +266,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel coinContainer;
+        private System.Windows.Forms.Button btnBack;
     }
 }

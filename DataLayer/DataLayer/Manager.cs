@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -10,40 +11,40 @@ namespace DataLayer
     {
         private const string PATH = "..\\..\\..\\Storage\\";
 
-        public static object loadFile(string FileName)
+        public static string loadJson(string FileName)
         {
-            object temp = null;
             string path = PATH + FileName;
             try {
                 if (File.Exists(path))
                 {
-                    Stream openFileStream = File.OpenRead(path);
-                    BinaryFormatter deserializer = new BinaryFormatter();
-                    temp = deserializer.Deserialize(openFileStream);
-                    openFileStream.Close();
-                    return temp;
+                    string data = System.IO.File.ReadAllText(path);
+                    if (data.Trim() == "")
+                        return null;
+                    else
+                        return data;
                 }
                 File.Create(path);
             }
             catch(Exception e)
             {
                 Console.WriteLine("Load file error!");
-                return temp;
+                
             }
-            return temp;
+            return null;
 
         }
 
-        public static bool saveFile(string FileName, object data)
+        public static bool saveJson(string FileName, object data)
         {
             try {
-                Stream SaveFileStream = File.Create(PATH + FileName);
-                BinaryFormatter serializer = new BinaryFormatter();
-                serializer.Serialize(SaveFileStream, data);
-                SaveFileStream.Close();
+
+                string json = JsonConvert.SerializeObject(data);
+                System.IO.File.WriteAllText(PATH+FileName, json);
+                Console.WriteLine("Save");
                 return true;
             }
             catch (Exception e) {
+                Console.WriteLine("Save Error");
                 return false;
             }
         }

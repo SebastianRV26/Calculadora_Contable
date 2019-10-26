@@ -4,8 +4,9 @@ using System.Text;
 
 namespace LogicalLayer.Interfaces
 {
-    public interface TotalValue
+    public interface ContainerUpdater
     {
-        void addMoney(float value);
+        void containerUpdate();
+        void fillContainer(List<Money> list);
     }
 }
