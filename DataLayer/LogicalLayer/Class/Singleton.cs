@@ -4,14 +4,14 @@ using DataLayer;
 using LogicalLayer.Enums;
 using System.Collections.Generic;
 using System.Collections;
-
+using Newtonsoft.Json;
 
 namespace LogicalLayer
 {
-    [Serializable]
+
     public class Singleton
     {
-        private const string CURRENCY = "Currency\\";
+        private const string PATH = "Currency\\";
         private static Singleton instance;
         private List<Money> money;
         private Currency currency;
@@ -20,36 +20,12 @@ namespace LogicalLayer
         private Singleton(Currency target)
         {
             this.currency = target;
-            string path = CURRENCY + target + ".dat";
-
-            this.money = (List<Money>) Manager.loadFile(path);
-
-            if(this.money is null)
-            {
-                this.money = new List<Money>();
-
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Coin, Currency.Colones));
-
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-                this.money.Add(new Money(1000, TypeCurrency.Bill, Currency.Colones));
-            }
-            
+            string data = Manager.loadJson(PATH + target.ToString() + ".json");
+            Console.WriteLine(data);
+            if (data != null)
+                this.money = JsonConvert.DeserializeObject<List<Money>>(data);
+            else
+                this.money = new List<Money>();   
         }
 
         public static Singleton getInstance(Currency currency)
@@ -61,6 +37,11 @@ namespace LogicalLayer
             return instance;
         }
 
+        public static Singleton getInstance()
+        {
+            return instance;
+        }
+
 
         public List<Money> getMoney()
         {
@@ -69,8 +50,9 @@ namespace LogicalLayer
 
         public bool saveMoney()
         {
-            string path = CURRENCY + this.currency.ToString() + ".dat";
-            return Manager.saveFile(path,this.money);
+            string path = PATH + this.currency.ToString() + ".json";
+            Console.WriteLine(path);
+            return Manager.saveJson(path,this.money);
         }
 
         public Currency getCurrency()

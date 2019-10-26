@@ -28,10 +28,11 @@ namespace PresentationLayer
 
         public void fillContainer(List<Money> list)
         {
+           
             foreach(Money money in list)
             {
-                MoneyControl temp = new MoneyControl(this, money.getValue());
-                if (money.GetTypeCurrency() == TypeCurrency.Bill)
+                MoneyControl temp = new MoneyControl(this, money.Value);
+                if (money.TypeCurrency == TypeCurrency.Bill)
                     billContainer.Controls.Add(temp);
                 else
                     coinContainer.Controls.Add(temp);
@@ -46,11 +47,9 @@ namespace PresentationLayer
 
         private void openManager(object sender, EventArgs e)
         {
-            
-            Manager manager = new Manager(this.singleton);
-
-            manager.Show();
-            this.Close();
+            this.singleton.saveMoney();
+            new Manager().Show();
+            this.Dispose();
         }
     }
 }

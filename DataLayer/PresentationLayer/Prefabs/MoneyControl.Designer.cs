@@ -38,7 +38,7 @@
             // 
             this.lblValue.AutoSize = true;
             this.lblValue.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValue.Location = new System.Drawing.Point(37, 54);
+            this.lblValue.Location = new System.Drawing.Point(37, 19);
             this.lblValue.Name = "lblValue";
             this.lblValue.Size = new System.Drawing.Size(93, 39);
             this.lblValue.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(36, 152);
+            this.btnAdd.Location = new System.Drawing.Point(36, 143);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(94, 34);
             this.btnAdd.TabIndex = 1;
@@ -62,7 +62,7 @@
             // inputQuantity
             // 
             this.inputQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputQuantity.Location = new System.Drawing.Point(37, 119);
+            this.inputQuantity.Location = new System.Drawing.Point(37, 90);
             this.inputQuantity.Name = "inputQuantity";
             this.inputQuantity.Size = new System.Drawing.Size(93, 27);
             this.inputQuantity.TabIndex = 2;

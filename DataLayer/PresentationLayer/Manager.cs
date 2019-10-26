@@ -19,19 +19,21 @@ namespace PresentationLayer
         private Singleton singleton;
 
 
-        public Manager(Singleton singleton)
+        public Manager()
         {
             InitializeComponent();
-            this.singleton = singleton;
+            this.singleton = Singleton.getInstance();
         }
+
+        
 
         public bool editMoney(int number, int newValue, TypeCurrency typeCurrency)
         {
             foreach (Money m in this.singleton.getMoney())
             {
-                if ((m.getValue() == number) && (m.getValue().Equals(typeCurrency)))
+                if ((m.Value == number) && (m.Value.Equals(typeCurrency)))
                 {
-                    m.setValue(newValue);
+                    m.Value = newValue;
                     return true;
                 }
             }
@@ -42,7 +44,7 @@ namespace PresentationLayer
         {
             foreach (Money m in this.singleton.getMoney()) 
             { 
-                if ((m.getValue() == number) && (m.getValue().Equals(typeCurrency)))
+                if ((m.Value == number) && (m.Value.Equals(typeCurrency)))
                 {
                     (this.singleton.getMoney()).Remove(m);
                     return true;
@@ -56,47 +58,35 @@ namespace PresentationLayer
         {
             Main main = new Main();
             main.Show();
-            this.Close();
+            this.Dispose();
         }
 
         private void addMoney(object sender, EventArgs e)
         {
+            if (txtboxAdd.Value > 0)
+            {
+                TypeCurrency typeCurrency;
+                float value = (float) txtboxAdd.Value;
 
-            if (string.IsNullOrEmpty(txtboxAdd.Text)) //if is empty
-            {
-                MessageBox.Show("No se ha insertado ningún dato", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            int number = Convert.ToInt32((txtboxAdd.Text));
-            Money mon;
-            if (radiobtnBillete.Checked == true) //it's bill
-            {
-                foreach (Money m in this.singleton.getMoney()) //validate that it is not repeated 
+                if (radiobtnBillete.Checked)
+                    typeCurrency = TypeCurrency.Bill;
+                else
+                    typeCurrency = TypeCurrency.Coin;
+
+                foreach (Money money in this.singleton.getMoney())
                 {
-                    if ((m.getValue() == number) && (m.GetTypeCurrency().Equals(TypeCurrency.Bill)))
+                    if ( money.Value == value  && money.TypeCurrency.Equals(typeCurrency) )
                     {
                         MessageBox.Show("Ya existe un billete con este valor", "Valor repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
-    
-                mon = new Money(number, TypeCurrency.Bill, singleton.getCurrency());
-                MessageBox.Show("Billete agregado correctamente!", "Mensaje informativo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            { //it's a coin
-                foreach (Money m in this.singleton.getMoney())
-                {
-                    if ((m.getValue() == number) && (m.GetTypeCurrency().Equals(TypeCurrency.Coin)))
-                    {
-                        MessageBox.Show("Ya existe una moneda con este valor", "Valor repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-                mon = new Money(number, TypeCurrency.Coin, singleton.getCurrency());
+
+                this.singleton.getMoney().Add( new Money(value, typeCurrency, singleton.getCurrency() ) );
                 MessageBox.Show("Moneda agregada correctamente!", "Mensaje informativo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
-            this.singleton.getMoney().Add(mon); 
+            MessageBox.Show("Valor en cero", "Valor nulo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
     }

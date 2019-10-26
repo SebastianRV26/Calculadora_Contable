@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicalLayer.Enums;
+using LogicalLayer.Interfaces;
 
 namespace PresentationLayer
 {
     public partial class Preload : Form
     {
+        // Constructor
         public Preload()
         {
             InitializeComponent();
@@ -21,12 +23,15 @@ namespace PresentationLayer
 
         }
 
+        
+
         private void clickEnter(object sender, EventArgs e)
         {
             Properties.Settings.Default.Currency = (Currency)comboCurrency.SelectedItem;
             Properties.Settings.Default.Remember = checkRemember.Checked;
             new Main().Show();
-            this.Close();
+            this.Dispose();
         }
+
     }
 }
