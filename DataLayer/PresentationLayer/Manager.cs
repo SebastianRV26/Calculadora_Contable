@@ -39,7 +39,9 @@ namespace PresentationLayer
 
         public void deleteCurrency(Money money)
         {
+            
             this.singleton.getMoney().Remove(money);
+            
         }
 
         private void addMoney(object sender, EventArgs e)

@@ -17,6 +17,7 @@ namespace PresentationLayer.Prefabs
             this.editing = false;
             this.manager = manager;
             InitializeComponent();
+            this.money = money;
             lblValue.Text = money.Value.ToString();
         }
 
@@ -32,6 +33,7 @@ namespace PresentationLayer.Prefabs
             this.inputQuantity.DecimalPlaces = 2;
             inputQuantity.Value = (decimal) money.Value;
             this.btnAction.Text = "Guardar";
+            this.money = money;
         }
 
         private void removeCurrency(object sender, EventArgs e)
@@ -44,11 +46,14 @@ namespace PresentationLayer.Prefabs
         {
             if (editing)
             {
+                this.money.Value = (float) inputQuantity.Value;
                 this.editor.editCurrency(this.money);
 
                 return;
             }
-            manager.addMoney((int)inputQuantity.Value * this.money.Value);
+            manager.addMoney( (int)inputQuantity.Value * this.money.Value);
+
+
             inputQuantity.Value = 0;
         }
     }
