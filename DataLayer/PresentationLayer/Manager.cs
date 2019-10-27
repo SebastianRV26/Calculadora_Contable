@@ -29,12 +29,7 @@ namespace PresentationLayer
         }
        
 
-        public void editCurrency(Money money)
-        {
-            int index = this.singleton.getMoney().IndexOf(money);
-            this.singleton.getMoney().Insert(index, money);
-
-        }
+        
 
         public void deleteCurrency(Money money)
         {

@@ -7,7 +7,6 @@ namespace LogicalLayer.Interfaces
 {
     public interface MoneyManager
     {
-        void editCurrency(Money money);
         void deleteCurrency(Money money);
     }
 }
