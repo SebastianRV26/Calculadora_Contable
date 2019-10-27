@@ -36,6 +36,7 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.moneyContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnBefore = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtboxAdd)).BeginInit();
             this.SuspendLayout();
@@ -44,6 +45,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(132)))), ((int)(((byte)(206)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnBefore);
             this.panel1.Controls.Add(this.txtboxAdd);
             this.panel1.Controls.Add(this.radiobtnMoneda);
             this.panel1.Controls.Add(this.radiobtnBillete);
@@ -97,10 +99,10 @@
             // btnAdd
             // 
             this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(649, 3);
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(474, -1);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(146, 37);
+            this.btnAdd.Size = new System.Drawing.Size(93, 45);
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "Agregar";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -134,6 +136,17 @@
             this.moneyContainer.Size = new System.Drawing.Size(800, 405);
             this.moneyContainer.TabIndex = 13;
             // 
+            // btnBefore
+            // 
+            this.btnBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBefore.Location = new System.Drawing.Point(724, -1);
+            this.btnBefore.Name = "btnBefore";
+            this.btnBefore.Size = new System.Drawing.Size(75, 45);
+            this.btnBefore.TabIndex = 17;
+            this.btnBefore.Text = "Atrás";
+            this.btnBefore.UseVisualStyleBackColor = true;
+            this.btnBefore.Click += new System.EventHandler(this.BtnBefore_Click);
+            // 
             // Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,5 +174,6 @@
         private System.Windows.Forms.RadioButton radiobtnBillete;
         private System.Windows.Forms.FlowLayoutPanel moneyContainer;
         private System.Windows.Forms.NumericUpDown txtboxAdd;
+        private System.Windows.Forms.Button btnBefore;
     }
 }

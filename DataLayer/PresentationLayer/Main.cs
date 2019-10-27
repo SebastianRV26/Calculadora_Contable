@@ -61,6 +61,9 @@ namespace PresentationLayer
         {
             this.total = 0;
             lblMoney.Text = "0.0";
+            Closing form = new Closing(this.singleton);
+            form.fillinClosing();
+            form.ShowDialog();
         }
 
         private void close(object sender, FormClosedEventArgs e)

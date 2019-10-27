@@ -27,8 +27,7 @@ namespace PresentationLayer
             this.singleton = singleton;
             this.fillContainer(this.singleton.getMoney());
         }
-
-        
+       
 
         public void editCurrency(Money money)
         {
@@ -93,6 +92,11 @@ namespace PresentationLayer
             {
                 moneyContainer.Controls.Add(new MoneyControl(this, money));
             }
+        }
+
+        private void BtnBefore_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
