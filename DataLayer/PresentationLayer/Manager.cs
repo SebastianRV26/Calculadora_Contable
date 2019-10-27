@@ -63,7 +63,7 @@ namespace PresentationLayer
                 this.singleton.getMoney().Add(temp);
                 this.singleton.saveMoney();
                 this.moneyContainer.Controls.Add(new MoneyControl(this, temp));
-                MessageBox.Show("Moneda agregada correctamente!", "Mensaje informativo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Agregado correctamente!", "Mensaje informativo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             MessageBox.Show("Valor en cero", "Valor nulo", MessageBoxButtons.OK, MessageBoxIcon.Error);
