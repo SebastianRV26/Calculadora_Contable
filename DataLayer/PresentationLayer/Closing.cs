@@ -14,18 +14,15 @@ namespace PresentationLayer
 
         public void fillinClosing()
         {
+            listBox1.Items.Add(string.Format("   \t{0}   \t\t{1}   \t\t{2}   \t{3}", "Tipo", "Valor", "Cantidad", "Total"));
             foreach (Money money in singleton.getMoney())
             {
-                listBox1.Items.Add(money.TypeCurrency);
-                listBox2.Items.Add(money.Value); 
-                listBox3.Items.Add(money.Quantity); 
-                listBox4.Items.Add((money.Value*money.Quantity)); //falta multiplicarlo por la cantidad
+                if (money.getQuantity() != 0)
+                {
+                    listBox1.Items.Add(string.Format("   \t{0}   \t\t{1}   \t\t{2}   \t\t{3}", money.TypeCurrency, money.Value, money.getQuantity(), money.Value * money.getQuantity()));
+                }
             }
         }
 
-        private void BtnBefore_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

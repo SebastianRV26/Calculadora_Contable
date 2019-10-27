@@ -58,10 +58,11 @@ namespace PresentationLayer.Prefabs
             {
                 this.money.Value = (float) inputQuantity.Value;
                 MessageBox.Show("Guardado");
+                
                 return;
             }
             manager.addMoney( (int)inputQuantity.Value * this.money.Value);
-
+            this.money.setQuantity((int)inputQuantity.Value); ///////////
 
             inputQuantity.Value = 0;
         }
