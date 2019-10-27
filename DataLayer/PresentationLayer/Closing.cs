@@ -30,5 +30,10 @@ namespace PresentationLayer
                 listBox4.Items.Add((money.Value*money.Quantity)); //falta multiplicarlo por la cantidad
             }
         }
+
+        private void BtnBefore_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

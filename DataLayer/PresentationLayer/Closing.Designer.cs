@@ -36,6 +36,7 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
+            this.btnBefore = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -122,11 +123,23 @@
             this.listBox4.Size = new System.Drawing.Size(197, 644);
             this.listBox4.TabIndex = 4;
             // 
+            // btnBefore
+            // 
+            this.btnBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBefore.Location = new System.Drawing.Point(1246, 646);
+            this.btnBefore.Name = "btnBefore";
+            this.btnBefore.Size = new System.Drawing.Size(75, 34);
+            this.btnBefore.TabIndex = 8;
+            this.btnBefore.Text = "Atrás";
+            this.btnBefore.UseVisualStyleBackColor = true;
+            this.btnBefore.Click += new System.EventHandler(this.BtnBefore_Click);
+            // 
             // Closing
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1333, 692);
+            this.Controls.Add(this.btnBefore);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -154,5 +167,6 @@
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.ListBox listBox4;
+        private System.Windows.Forms.Button btnBefore;
     }
 }
