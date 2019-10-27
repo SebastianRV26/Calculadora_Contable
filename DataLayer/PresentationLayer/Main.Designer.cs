@@ -105,7 +105,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 31);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Menu";
+            this.label1.Text = "Menú";
             // 
             // panel1
             // 
