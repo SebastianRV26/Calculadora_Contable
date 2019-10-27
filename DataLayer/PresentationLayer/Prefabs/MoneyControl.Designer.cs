@@ -40,7 +40,7 @@
             // 
             this.lblValue.AutoSize = true;
             this.lblValue.Font = new System.Drawing.Font("Arial", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValue.Location = new System.Drawing.Point(37, 19);
+            this.lblValue.Location = new System.Drawing.Point(19, 26);
             this.lblValue.Name = "lblValue";
             this.lblValue.Size = new System.Drawing.Size(93, 39);
             this.lblValue.TabIndex = 0;
@@ -53,7 +53,7 @@
             this.btnAction.FlatAppearance.BorderSize = 0;
             this.btnAction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAction.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAction.Location = new System.Drawing.Point(36, 143);
+            this.btnAction.Location = new System.Drawing.Point(44, 120);
             this.btnAction.Name = "btnAction";
             this.btnAction.Size = new System.Drawing.Size(94, 34);
             this.btnAction.TabIndex = 1;
@@ -64,7 +64,7 @@
             // inputQuantity
             // 
             this.inputQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inputQuantity.Location = new System.Drawing.Point(18, 84);
+            this.inputQuantity.Location = new System.Drawing.Point(26, 84);
             this.inputQuantity.Maximum = new decimal(new int[] {
             1000000000,
             0,
@@ -93,7 +93,7 @@
             // 
             this.lblEditing.AutoSize = true;
             this.lblEditing.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditing.Location = new System.Drawing.Point(31, 56);
+            this.lblEditing.Location = new System.Drawing.Point(21, 56);
             this.lblEditing.Name = "lblEditing";
             this.lblEditing.Size = new System.Drawing.Size(58, 25);
             this.lblEditing.TabIndex = 4;
@@ -104,7 +104,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.BackColor = System.Drawing.Color.Transparent;
+            this.BackgroundImage = global::PresentationLayer.Properties.Resources.circular1;
             this.Controls.Add(this.lblEditing);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.inputQuantity);

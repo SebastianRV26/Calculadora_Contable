@@ -19,6 +19,8 @@ namespace PresentationLayer.Prefabs
             InitializeComponent();
             this.money = money;
             lblValue.Text = money.Value.ToString();
+            this.changeBackground();
+
         }
 
         public MoneyControl(MoneyManager editor, Money money)
@@ -34,6 +36,14 @@ namespace PresentationLayer.Prefabs
             inputQuantity.Value = (decimal) money.Value;
             this.btnAction.Text = "Guardar";
             this.money = money;
+
+            this.changeBackground();
+        }
+
+        private void changeBackground()
+        {
+            if (this.money.TypeCurrency == LogicalLayer.Enums.TypeCurrency.Bill)
+                this.BackColor = System.Drawing.Color.LightBlue;
         }
 
         private void removeCurrency(object sender, EventArgs e)
@@ -47,8 +57,7 @@ namespace PresentationLayer.Prefabs
             if (editing)
             {
                 this.money.Value = (float) inputQuantity.Value;
-                this.editor.editCurrency(this.money);
-
+                MessageBox.Show("Guardado");
                 return;
             }
             manager.addMoney( (int)inputQuantity.Value * this.money.Value);
