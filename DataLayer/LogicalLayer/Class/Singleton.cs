@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Text;
 using DataLayer;
 using LogicalLayer.Enums;
 using System.Collections.Generic;
-using System.Collections;
 using Newtonsoft.Json;
 
 namespace LogicalLayer
@@ -12,34 +10,34 @@ namespace LogicalLayer
     public class Singleton
     {
         private const string PATH = "Currency\\";
+        private const string TYPE = ".json";
+
         private static Singleton instance;
         private List<Money> money;
+
         private Currency currency;
 
 
-        private Singleton(Currency target)
+        private Singleton()
         {
-            this.currency = target;
-
-            string data = Manager.loadJson(PATH + target.ToString() + ".json");
-            Console.WriteLine(data);
-            if (data != null)
-                this.money = JsonConvert.DeserializeObject<List<Money>>(data);
-            else
-                this.money = new List<Money>();   
+            
         }
 
-        public static Singleton getInstance(Currency currency)
+        private List<Money> getData()
         {
-            if (instance == null)
-            {
-                return instance = new Singleton(currency);
-            }
-            return instance;
+            string data = Manager.loadJson(PATH + this.currency.ToString() + TYPE);
+
+            if (data != null)
+                return this.money = JsonConvert.DeserializeObject<List<Money>>(data);
+            return this.money = new List<Money>();
         }
 
         public static Singleton getInstance()
         {
+            if (instance == null)
+            {
+                return instance = new Singleton();
+            }
             return instance;
         }
 
@@ -51,7 +49,7 @@ namespace LogicalLayer
 
         public bool saveMoney()
         {
-            string path = PATH + this.currency.ToString() + ".json";
+            string path = PATH + this.currency.ToString() + TYPE;
             Console.WriteLine(path);
             return Manager.saveJson(path,this.money);
         }
@@ -60,9 +58,14 @@ namespace LogicalLayer
         {
             return this.currency;
         }
+        public void setCurrency(Currency currency)
+        {
+            this.currency = currency;
+            this.getData();
+        }
+       
 
- 
-
+        
 
     }
 }

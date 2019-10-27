@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PresentationLayer.Prefabs;
-using Newtonsoft.Json.Linq;
 using LogicalLayer.Enums;
 using LogicalLayer.Interfaces;
 
@@ -25,7 +24,7 @@ namespace PresentationLayer
         public Main()
         {
             InitializeComponent();
-            this.singleton = Singleton.getInstance(Properties.Settings.Default.Currency);
+            this.singleton = Singleton.getInstance();
             this.fillContainer( this.singleton.getMoney());          
         }
 
