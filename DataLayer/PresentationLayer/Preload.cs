@@ -14,12 +14,10 @@ namespace PresentationLayer
         {
             this.singleton = Singleton.getInstance();
             InitializeComponent();
-            checkRemember.Checked = Properties.Settings.Default.Remember;
             comboCurrency.DataSource = Enum.GetValues(typeof(Currency));
-
         }
 
-        
+
 
         private void clickEnter(object sender, EventArgs e)
         {

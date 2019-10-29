@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBefore = new System.Windows.Forms.Button();
             this.txtboxAdd = new System.Windows.Forms.NumericUpDown();
             this.radiobtnMoneda = new System.Windows.Forms.RadioButton();
             this.radiobtnBillete = new System.Windows.Forms.RadioButton();
@@ -36,7 +37,6 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.moneyContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnBefore = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtboxAdd)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 45);
             this.panel1.TabIndex = 0;
+            // 
+            // btnBefore
+            // 
+            this.btnBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBefore.Location = new System.Drawing.Point(724, -1);
+            this.btnBefore.Name = "btnBefore";
+            this.btnBefore.Size = new System.Drawing.Size(75, 45);
+            this.btnBefore.TabIndex = 17;
+            this.btnBefore.Text = "Atrás";
+            this.btnBefore.UseVisualStyleBackColor = true;
+            this.btnBefore.Click += new System.EventHandler(this.BtnBefore_Click);
             // 
             // txtboxAdd
             // 
@@ -130,22 +141,13 @@
             // 
             // moneyContainer
             // 
+            this.moneyContainer.AutoScroll = true;
+            this.moneyContainer.AutoSize = true;
             this.moneyContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.moneyContainer.Location = new System.Drawing.Point(0, 45);
             this.moneyContainer.Name = "moneyContainer";
             this.moneyContainer.Size = new System.Drawing.Size(800, 405);
             this.moneyContainer.TabIndex = 13;
-            // 
-            // btnBefore
-            // 
-            this.btnBefore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBefore.Location = new System.Drawing.Point(724, -1);
-            this.btnBefore.Name = "btnBefore";
-            this.btnBefore.Size = new System.Drawing.Size(75, 45);
-            this.btnBefore.TabIndex = 17;
-            this.btnBefore.Text = "Atrás";
-            this.btnBefore.UseVisualStyleBackColor = true;
-            this.btnBefore.Click += new System.EventHandler(this.BtnBefore_Click);
             // 
             // Manager
             // 
@@ -161,6 +163,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtboxAdd)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

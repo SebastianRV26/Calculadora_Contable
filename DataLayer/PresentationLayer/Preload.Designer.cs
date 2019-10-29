@@ -30,7 +30,6 @@
         {
             this.comboCurrency = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkRemember = new System.Windows.Forms.CheckBox();
             this.btnEnter = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,16 +53,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Moneda";
             // 
-            // checkRemember
-            // 
-            this.checkRemember.AutoSize = true;
-            this.checkRemember.Location = new System.Drawing.Point(75, 195);
-            this.checkRemember.Name = "checkRemember";
-            this.checkRemember.Size = new System.Drawing.Size(112, 17);
-            this.checkRemember.TabIndex = 2;
-            this.checkRemember.Text = "Recordar Moneda";
-            this.checkRemember.UseVisualStyleBackColor = true;
-            // 
             // btnEnter
             // 
             this.btnEnter.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -82,7 +71,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(259, 300);
             this.Controls.Add(this.btnEnter);
-            this.Controls.Add(this.checkRemember);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboCurrency);
             this.Name = "Preload";
@@ -97,7 +85,6 @@
 
         private System.Windows.Forms.ComboBox comboCurrency;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkRemember;
         private System.Windows.Forms.Button btnEnter;
     }
 }
