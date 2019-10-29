@@ -11,7 +11,7 @@ namespace LogicalLayer
         public Currency Currency { get; set; }
         public TypeCurrency TypeCurrency { get; set; }
 
-        public int Quantity { get; set; }
+        private int Quantity { get; set; }
         
         public Money(float value, TypeCurrency typeCurrency, Currency currency)
         {
@@ -22,6 +22,14 @@ namespace LogicalLayer
 
         }
 
+        public int getQuantity()
+        {
+            return this.Quantity;
+        }
 
+        public void setQuantity(int quantity)
+        {
+            this.Quantity += quantity;
+        }
     }
 }
