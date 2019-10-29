@@ -62,7 +62,7 @@ namespace PresentationLayer.Prefabs
                 return;
             }
             manager.addMoney( (int)inputQuantity.Value * this.money.Value);
-            this.money.setQuantity((int)inputQuantity.Value); ///////////
+            this.money.setQuantity((int)inputQuantity.Value); //increase the amount of the object
 
             inputQuantity.Value = 0;
         }

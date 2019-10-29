@@ -61,17 +61,17 @@ namespace PresentationLayer
             this.total = 0;
             lblMoney.Text = "0.0";
             Closing form = new Closing(this.singleton);
-            form.fillinClosing();
-            form.ShowDialog();
+            form.fillinClosing(); //function that fills the listbox of the form to be displayed
+            form.ShowDialog(); 
         }
 
         private void close(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            Application.Exit(); //the program ends
         }
 
         private void back(object sender, EventArgs e)
-        {
+        { //choose the type of currency again
             Form form = new Preload();
             form.Show();
             this.Dispose();

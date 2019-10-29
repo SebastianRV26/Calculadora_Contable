@@ -13,10 +13,9 @@ namespace PresentationLayer
         private Singleton singleton;
   
 
-
         public Manager(Singleton singleton)
         {
-   
+            //the singleton containing the list of currencies belonging to the file is revived
             InitializeComponent();
             this.singleton = singleton;
             this.fillContainer(this.singleton.getMoney());
@@ -27,13 +26,17 @@ namespace PresentationLayer
 
         public void deleteCurrency(Money money)
         {
-            
+            //function call that removes the selected money instance
             this.singleton.getMoney().Remove(money);
             
         }
 
         private void addMoney(object sender, EventArgs e)
         {
+            /*
+             * Function that runs through the singleton list, and if the ticket or 
+             * coin of the same value is not repeated, add the object to that list
+             */
             if (txtboxAdd.Value > 0)
             {
                 TypeCurrency typeCurrency;
@@ -64,7 +67,7 @@ namespace PresentationLayer
         }
 
         private void SaveData(object sender, FormClosingEventArgs e)
-        {
+        {//function call that edits the value of the selected money instance
             this.singleton.saveMoney();
         }
 
@@ -84,8 +87,8 @@ namespace PresentationLayer
         }
 
         private void BtnBefore_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        { //if you press the "Atrás" button, close the form
+            this.Close(); //
         }
     }
 }
