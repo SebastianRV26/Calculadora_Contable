@@ -47,23 +47,17 @@ namespace PresentationLayer
                 else
                     typeCurrency = TypeCurrency.Coin;
 
-                foreach (Money money in this.singleton.getMoney())
+                if (!this.isEqual(value,typeCurrency))
                 {
-                    if ( money.Value == value  && money.TypeCurrency.Equals(typeCurrency) )
-                    {
-                        MessageBox.Show("Ya existe un billete con este valor", "Valor repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    Money temp = new Money(value, typeCurrency, singleton.getCurrency());
+                    this.singleton.getMoney().Add(temp);
+                    this.singleton.saveMoney();
+                    this.moneyContainer.Controls.Add(new MoneyControl(this, temp));
+                    MessageBox.Show("Agregado correctamente!", "Mensaje informativo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-
-                Money temp = new Money(value, typeCurrency, singleton.getCurrency());
-                this.singleton.getMoney().Add(temp);
-                this.singleton.saveMoney();
-                this.moneyContainer.Controls.Add(new MoneyControl(this, temp));
-                MessageBox.Show("Agregado correctamente!", "Mensaje informativo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-            MessageBox.Show("Valor en cero", "Valor nulo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }else
+                MessageBox.Show("Valor en cero", "Valor nulo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void SaveData(object sender, FormClosingEventArgs e)
@@ -79,7 +73,6 @@ namespace PresentationLayer
 
         public void fillContainer(List<Money> list)
         {
-           
             foreach (Money money in list)
             {
                 moneyContainer.Controls.Add(new MoneyControl(this, money));
@@ -89,6 +82,26 @@ namespace PresentationLayer
         private void BtnBefore_Click(object sender, EventArgs e)
         { //if you press the "Atrás" button, close the form
             this.Close(); //
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="typeCurrency"></param>
+        /// <returns></returns>
+        public bool isEqual(float value,TypeCurrency typeCurrency)
+        {
+            foreach (Money money in this.singleton.getMoney())
+            {
+                if (money.Value == value && money.TypeCurrency.Equals(typeCurrency))
+                {
+                    MessageBox.Show("Ya existe un billete con este valor", "Valor repetido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

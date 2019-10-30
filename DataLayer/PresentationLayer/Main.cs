@@ -60,7 +60,7 @@ namespace PresentationLayer
         {
             this.total = 0;
             lblMoney.Text = "0.0";
-            Closing form = new Closing(this.singleton);
+            Closing form = new Closing();
             form.fillinClosing(); //function that fills the listbox of the form to be displayed
             form.ShowDialog(); 
         }

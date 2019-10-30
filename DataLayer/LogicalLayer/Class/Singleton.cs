@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using DataLayer;
 using LogicalLayer.Enums;
 using System.Collections.Generic;
@@ -6,7 +7,10 @@ using Newtonsoft.Json;
 
 namespace LogicalLayer
 {
-
+    /// <summary>
+    /// Singleton class.
+    /// 
+    /// </summary>
     public class Singleton
     {
         private const string PATH = "Currency\\";
@@ -17,12 +21,12 @@ namespace LogicalLayer
 
         private Currency currency;
 
+        /// <summary>
+        /// Singleton Constructor
+        /// </summary>
+        private Singleton(){ }
 
-        private Singleton()
-        {
-            
-        }
-
+        ///<summary> search and save data in money attribute </summary>
         private List<Money> getData()
         {
             string data = Manager.loadJson(PATH + this.currency.ToString() + TYPE);
@@ -32,6 +36,10 @@ namespace LogicalLayer
             return this.money = new List<Money>();
         }
 
+        ///<summary>
+        ///getter the Singleton istance, if the instance is null,
+        ///create new Singleton instance
+        ///</summary>
         public static Singleton getInstance()
         {
             if (instance == null)
@@ -41,31 +49,43 @@ namespace LogicalLayer
             return instance;
         }
 
-
+        ///<summary>
+        ///getter attribute money. This attribute has all money in the active session.
+        ///</summary>
         public List<Money> getMoney()
         {
             return this.money;
         }
 
+
+        ///<summary>
+        ///call saveJson method to save all currency in the active session.
+        ///</summary>
         public bool saveMoney()
         {
-            string path = PATH + this.currency.ToString() + TYPE;
-            Console.WriteLine(path);
+            string path = PATH + currency.ToString() + TYPE;
             return Manager.saveJson(path,this.money);
         }
 
+
+        ///<summary>
+        ///getter attrbiute currency. this attribute has active currency in the application.
+        ///</summary>
         public Currency getCurrency()
         {
             return this.currency;
         }
+
+        ///<summary>
+        ///setter attribute currency
+        ///</summary>
+        ///<param name="currency">
+        ///Currency enum to set.
+        /// </param>
         public void setCurrency(Currency currency)
         {
             this.currency = currency;
             this.getData();
         }
-       
-
-        
-
     }
 }
