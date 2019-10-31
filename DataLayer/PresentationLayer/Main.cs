@@ -14,7 +14,7 @@ namespace PresentationLayer
     public partial class Main : Form, TotalValue,ContainerUpdater
     {
         private Singleton singleton;
-        private float total;
+        private double total;
 
         /// <summary>
         /// Main constructor.
@@ -38,7 +38,7 @@ namespace PresentationLayer
             }
         }
 
-        public void addMoney(float value)
+        public void addMoney(double value)
         {
             this.total += value;
             lblMoney.Text = this.total.ToString();

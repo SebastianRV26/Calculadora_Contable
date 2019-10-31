@@ -23,6 +23,6 @@ namespace LogicalLayer.Interfaces
         /// <param name="value"> Value used to compare </param>
         /// <param name="typeCurrency"> type currency used to compare</param>
         /// <returns>True if the value is equal or false is not same </returns>
-        bool isEqual(float value,TypeCurrency typeCurrency);
+        bool isEqual(double value,TypeCurrency typeCurrency);
     }
 }

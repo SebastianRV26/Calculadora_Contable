@@ -9,7 +9,7 @@ namespace LogicalLayer
     /// </summary>
     public class Money
     {
-        public float Value { get; set; }
+        public double Value { get; set; }
         public Currency Currency { get; set; }
         public TypeCurrency TypeCurrency { get; set; }
 
@@ -21,7 +21,7 @@ namespace LogicalLayer
         ///<param name="typeCurrency"> Type currency </param>
         ///<example>Coin,Bill</example>
         ///<param name="currency">  </param>
-        public Money(float value, TypeCurrency typeCurrency, Currency currency)
+        public Money(double value, TypeCurrency typeCurrency, Currency currency)
         {
             this.Currency = currency;
             this.TypeCurrency = typeCurrency;

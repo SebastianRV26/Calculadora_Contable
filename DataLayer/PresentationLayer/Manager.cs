@@ -48,7 +48,7 @@ namespace PresentationLayer
             if (txtboxAdd.Value > 0)
             {
                 TypeCurrency typeCurrency;
-                float value = (float) txtboxAdd.Value;
+                double value = (double) txtboxAdd.Value;
 
                 if (radiobtnBillete.Checked)
                     typeCurrency = TypeCurrency.Bill;
@@ -113,7 +113,7 @@ namespace PresentationLayer
         /// true: if you found a value with the repeated type
         /// false: if you didn't find it
         /// </returns>
-        public bool isEqual(float value,TypeCurrency typeCurrency)
+        public bool isEqual(double value,TypeCurrency typeCurrency)
         {
             foreach (Money money in this.singleton.getMoney())
             {

@@ -13,6 +13,6 @@ namespace LogicalLayer.Interfaces
         /// take the value and add to accumlate.
         /// </summary>
         /// <param name="value"> value to add </param>
-        void addMoney(float value);
+        void addMoney(double value);
     }
 }

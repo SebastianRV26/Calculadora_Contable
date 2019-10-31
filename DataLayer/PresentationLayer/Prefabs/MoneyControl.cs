@@ -87,7 +87,7 @@ namespace PresentationLayer.Prefabs
             if (editing)
             {
                 Console.WriteLine("Editanto");
-                float value = (float)inputQuantity.Value;
+                double value = (double)inputQuantity.Value;
                 Console.WriteLine(value);
                 if (value > 0)
                 {
