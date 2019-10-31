@@ -86,10 +86,12 @@ namespace PresentationLayer.Prefabs
         {
             if (editing)
             {
+                Console.WriteLine("Editanto");
                 float value = (float)inputQuantity.Value;
-                if (value <= 0)
+                Console.WriteLine(value);
+                if (value > 0)
                 {
-                    
+                    Console.WriteLine("Valor mayor");
                     if (!this.editor.isEqual(value, this.money.TypeCurrency))
                     {
                         this.money.Value = value;

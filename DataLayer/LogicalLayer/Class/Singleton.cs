@@ -1,6 +1,4 @@
-﻿
-using System;
-using DataLayer;
+﻿using DataLayer;
 using LogicalLayer.Enums;
 using System.Collections.Generic;
 using Newtonsoft.Json;

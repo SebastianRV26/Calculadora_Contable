@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
 
 namespace DataLayer
 {
@@ -43,7 +40,6 @@ namespace DataLayer
                 Console.WriteLine("Fatal Error");
             }
             return null;
-
         }
 
         ///<summary> Save data in JSON file. </summary>
@@ -58,7 +54,6 @@ namespace DataLayer
         public static bool saveJson(string FileName, object data)
         {
             try {
-
                 string json = JsonConvert.SerializeObject(data);
                 System.IO.File.WriteAllText(PATH+FileName, json);
                 Console.WriteLine("Save");
@@ -67,7 +62,6 @@ namespace DataLayer
             catch (JsonSerializationException e)
             {
                 Console.WriteLine("serialization Error");
-                
             }
             catch (IOException e)
             {
