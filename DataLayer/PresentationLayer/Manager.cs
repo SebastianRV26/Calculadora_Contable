@@ -8,35 +8,43 @@ using LogicalLayer.Interfaces;
 
 namespace PresentationLayer
 {
+    /// <summary>
+    /// Manager class.
+    /// </summary>
     public partial class Manager: Form, MoneyManager, ContainerUpdater
     {
         private Singleton singleton;
-  
 
+        /// <summary>
+        /// Manager constructor
+        /// </summary>
+        /// <param name="singleton"></param>
         public Manager(Singleton singleton)
         {
-            //the singleton containing the list of currencies belonging to the file is revived
             InitializeComponent();
             this.singleton = singleton;
             this.fillContainer(this.singleton.getMoney());
         }
-       
 
-        
 
+
+        /// <summary>
+        /// function call that removes the selected money instance
+        /// </summary>
+        /// <param name="money"></param>
         public void deleteCurrency(Money money)
         {
-            //function call that removes the selected money instance
             this.singleton.getMoney().Remove(money);
-            
         }
 
+        /// <summary>
+        /// Validates that the number entered is positive and validates that there is 
+        /// no number with the same type of concurrence
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void addMoney(object sender, EventArgs e)
         {
-            /*
-             * Function that runs through the singleton list, and if the ticket or 
-             * coin of the same value is not repeated, add the object to that list
-             */
             if (txtboxAdd.Value > 0)
             {
                 TypeCurrency typeCurrency;
@@ -65,12 +73,19 @@ namespace PresentationLayer
             this.singleton.saveMoney();
         }
 
+        /// <summary>
+        /// call the functions that refresh the list
+        /// </summary>
         public void containerUpdate()
         {
             this.moneyContainer.Controls.Clear();
             this.fillContainer(this.singleton.getMoney());
         }
 
+        /// <summary>
+        /// call the function that shows the coins
+        /// </summary>
+        /// <param name="list"></param>
         public void fillContainer(List<Money> list)
         {
             foreach (Money money in list)
@@ -86,11 +101,14 @@ namespace PresentationLayer
 
 
         /// <summary>
-        /// 
+        /// function that runs through the singleton list
         /// </summary>
         /// <param name="value"></param>
         /// <param name="typeCurrency"></param>
-        /// <returns></returns>
+        /// <returns>
+        /// true: if you found a value with the repeated type
+        /// false: if you didn't find it
+        /// </returns>
         public bool isEqual(float value,TypeCurrency typeCurrency)
         {
             foreach (Money money in this.singleton.getMoney())
