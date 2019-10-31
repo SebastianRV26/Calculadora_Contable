@@ -5,12 +5,16 @@ using System.Windows.Forms;
 namespace PresentationLayer
 {
 
-    
+    /// <summary>
+    /// Closing class
+    /// </summary>
     public partial class Closing : Form
     {
         private Singleton singleton;
 
-
+        /// <summary>
+        /// Closing constructor
+        /// </summary>
         public Closing()
         {
             singleton = Singleton.getInstance(); 
@@ -18,7 +22,7 @@ namespace PresentationLayer
         }
 
         /// <summary>
-        /// 
+        /// fill the listbox with the coins that were added in the main form
         /// </summary>
         public void fillinClosing()
         {

@@ -69,7 +69,7 @@ namespace PresentationLayer
         }
 
         private void SaveData(object sender, FormClosingEventArgs e)
-        {//function call that edits the value of the selected money instance
+        {
             this.singleton.saveMoney();
         }
 
@@ -93,9 +93,13 @@ namespace PresentationLayer
                 moneyContainer.Controls.Add(new MoneyControl(this, money));
             }
         }
-
+        /// <summary>
+        /// if you press the "Atrás" button, close the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnBefore_Click(object sender, EventArgs e)
-        { //if you press the "Atrás" button, close the form
+        { 
             this.Close(); //
         }
 
