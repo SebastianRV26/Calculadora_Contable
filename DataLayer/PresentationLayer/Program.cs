@@ -16,7 +16,12 @@ namespace PresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form form = new Preload();
+            form.Show();
+            Application.Run();
+
         }
+
+        
     }
 }
